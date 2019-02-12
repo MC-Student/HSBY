@@ -64,9 +64,8 @@ int get_color()
 #define ARM1UP
 #define ARM2UP
 
-void camera_scan
+void camera_scan{
 //activate camera- how?
-    { 
    printf("Camera activated.\n");
 	int i;
 	for(i=0;i<10;i++){
@@ -84,10 +83,17 @@ void camera_scan
 }
     
 void get_mayor(){
-
+    go_forward ();
+    }
     
-	
-void get_botguy
+void get_botguy(){
+    set_servo_position(,);
+    turn_right();
+    turn_right();
+    set_servo_position(,);
+    set_servo_position(,);
+    }
+    
 void get_water
 void rescue_firefighters
 
