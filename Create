@@ -53,12 +53,21 @@ void turn_small_right(){
 //camera basics
 #define RED 0
 #define YELLOW 1
-#define GREEN 2
-#define NOCOLOR 1
+#define NOCOLOR 2
 
 //returns value based on color seen
 int get_color()
-{
+
+
+//subprocedures
+
+#define ARM1UP
+#define ARM2UP
+
+void camera_scan
+//activate camera- how?
+    { 
+   printf("Camera activated.\n");
 	int i;
 	for(i=0;i<10;i++){
 		msleep(50);
@@ -67,20 +76,16 @@ int get_color()
     	red_count=get_object_count(RED);
     	int yellow_count=0; msleep(50);
     	yellow_count=get_object_count(YELLOW);
-    	int green_count=0; msleep(50);
-    	green_count=get_object_count(GREEN);
-    	printf("Num of objects (red yellow and green) is %d,%d,%d\n",red_count,yellow_count,green_count);
+    	printf("Num of objects (red and yellow) is %d,%d/n",red_count,yellow_count);
     	}
 	/*if (get_object_count(RED)>0) return(RED);
-	if (get_object_count(YELLOW)>0) return(YELLOW);
-   	if (get_object_count(GREEN)>0) return (GREEN);*/
+	if (get_object_count(YELLOW)>0) return(YELLOW);*/
    	return (NOCOLOR);
 }
-
-//subprocedures
-
-//void camera_scan
+    
 void get_mayor(){
+
+    
 	
 void get_botguy
 void get_water
