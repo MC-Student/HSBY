@@ -49,10 +49,12 @@ void turn_small_right(){
         msleep(200);
 	}        
 }
+
+//camera basics
 #define RED 0
 #define YELLOW 1
 #define GREEN 2
-#define NOCOLOR 3
+#define NOCOLOR 1
 
 //returns value based on color seen
 int get_color()
@@ -73,4 +75,34 @@ int get_color()
 	if (get_object_count(YELLOW)>0) return(YELLOW);
    	if (get_object_count(GREEN)>0) return (GREEN);*/
    	return (NOCOLOR);
+}
+
+//subprocedures
+
+//void camera_scan
+void get_mayor(){
+	
+void get_botguy
+void get_water
+void rescue_firefighters
+
+//Main Procedure
+int main()
+{
+    printf("Hello World\n");
+    create_connect();
+    enable_servos();
+    set_servo_position(,);
+    set_servo_position(,);
+    camera_scan();
+    //finds burning building to determine which 2 to go to next
+    get_mayor();
+    //bring to disaster relief zone
+    get_botguy();
+    //insert wait for lego robot to run
+    get_water();
+    //using perdtermined burning building in camera_scan procedure
+    rescue_firefighters();
+    create_disconnect();
+    return 0;
 }
