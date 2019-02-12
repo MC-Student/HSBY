@@ -1,0 +1,76 @@
+//Basic Manuvers
+
+void go_forward(int time) {
+    create_drive_straight(-20);
+    msleep(time);
+    create_stop();
+}
+
+void back_up(int time){
+    create_drive_straight(20);
+    msleep(time);
+    create_stop();
+}
+/*void drive_slowly(int time){
+    create_drive_straight(-50);
+    msleep(time);
+    create_stop();
+}*/
+
+/*void turn_left(){
+	set_create_total_angle(0);
+    while (get_create_total_angle() < 90)
+    {
+    	create_drive_direct(-200,200);
+	}
+}
+void turn_right(){
+	set_create_total_angle(0);
+    while (get_create_total_angle() > -90)
+    {
+    	create_drive_direct(200,-200);
+	}        
+}*/
+void turn_small_left(){
+    printf("Beginning turn_small_left.\n");
+	set_create_total_angle(0);
+    while (get_create_total_angle() < 25)
+    {
+    	create_drive_direct(20,20);
+	}
+}
+void turn_small_right(){
+    printf("Beginning turn_small_right.\n");
+	set_create_total_angle(0);
+    while (get_create_total_angle() > -2)
+    {
+        printf("Turning.\n");
+    	create_drive_direct(15,-15);
+        msleep(200);
+	}        
+}
+#define RED 0
+#define YELLOW 1
+#define GREEN 2
+#define NOCOLOR 3
+
+//returns value based on color seen
+int get_color()
+{
+	int i;
+	for(i=0;i<10;i++){
+		msleep(50);
+   		camera_update();
+    	int red_count=0; msleep(50);
+    	red_count=get_object_count(RED);
+    	int yellow_count=0; msleep(50);
+    	yellow_count=get_object_count(YELLOW);
+    	int green_count=0; msleep(50);
+    	green_count=get_object_count(GREEN);
+    	printf("Num of objects (red yellow and green) is %d,%d,%d\n",red_count,yellow_count,green_count);
+    	}
+	/*if (get_object_count(RED)>0) return(RED);
+	if (get_object_count(YELLOW)>0) return(YELLOW);
+   	if (get_object_count(GREEN)>0) return (GREEN);*/
+   	return (NOCOLOR);
+}
