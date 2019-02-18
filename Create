@@ -63,8 +63,10 @@ int get_color()
 
 #define ARM1UP
 #define ARM2UP
+#define BURNING 0
+#define NONBURNING 1
 
-void camera_scan{
+void camera_scan1
 //activate camera- how?
    printf("Camera activated.\n");
 	int i;
@@ -76,26 +78,22 @@ void camera_scan{
     	int yellow_count=0; msleep(50);
     	yellow_count=get_object_count(YELLOW);
     	printf("Num of objects (red and yellow) is %d,%d/n",red_count,yellow_count);
-    	}
-	/*if (get_object_count(RED)>0) return(RED);
-	if (get_object_count(YELLOW)>0) return(YELLOW);*/
-   	return (NOCOLOR);
+	if (get_object_count(YELLOW)>0&&get_object_count(RED)>0) return(BURNING) else return(NONBURNING);
+	if(camera_scan()==BURNING){extinguish_fire} else{go_forward(200);}
 }
-    
-void get_mayor(){
-    go_forward ();
-    }
-    
-void get_botguy(){
-    set_servo_position(,);
-    turn_right();
-    turn_right();
-    set_servo_position(,);
-    set_servo_position(,);
-    }
-    
-void get_water
-void rescue_firefighters
+
+
+void get_water(){
+void camera_scan1(){
+void extinguish_fire(){
+void get_MorB_1(){
+void get_MorB_2(){
+void get_MorB_3(){
+void rescue_firefighters(){
+void camera_scan2(){
+void save_medicenter(){
+void leave(){
+void connect_electricity(){
 
 //Main Procedure
 int main()
@@ -103,17 +101,26 @@ int main()
     printf("Hello World\n");
     create_connect();
     enable_servos();
+    shut_down_in(2000);
     set_servo_position(,);
     set_servo_position(,);
-    camera_scan();
-    //finds burning building to determine which 2 to go to next
-    get_mayor();
-    //bring to disaster relief zone
-    get_botguy();
-    //insert wait for lego robot to run
     get_water();
-    //using perdtermined burning building in camera_scan procedure
+    camera_scan1();
+    //finds burning building to determine which one to bring the water to
+    extinguish_fire();
+    get_MorB_1();
+    //bring to disaster relief zone
+    get_MorB_2();
+    //bring to disaster relief zone
+    get_MorB_3();
+    //bring to disaster relief zone
     rescue_firefighters();
+    camera_scan2();
+    //determine which medicenter is burning
+    save_medicenter();
+    leave();
+    //reposition and go to the other side of the board
+    connect_electricity();
     create_disconnect();
     return 0;
 }
