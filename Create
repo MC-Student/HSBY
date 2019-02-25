@@ -83,17 +83,36 @@ void camera_scan1
 }
 
 
-void get_water(){
-void camera_scan1(){
-void extinguish_fire(){
+void get_water(){}
+void camera_scan1(){}
+void extinguish_fire(){}
+
 void get_MorB_1(){
-void get_MorB_2(){
-void get_MorB_3(){
-void rescue_firefighters(){
-void camera_scan2(){
-void save_medicenter(){
-void leave(){
-void connect_electricity(){
+set_servo_postion(1,2047);
+set_servo_position(0,2047);
+set_servo_position(2,200); //open claw all the way
+set_servo_position(2,104); //close claw to hold it
+back_up(800);
+turn_right();
+turn_right();
+set_servo_position(2,200); //open claw
+set_servo_position(2,0); //close claw all the way to original position
+//close entire arm
+set_servo_position(0,0);
+set_servo_position(1,0);
+back_up(800);
+turn_left();
+turn_left();
+//now it's at where it started hopefully
+}
+
+void get_MorB_2(){}
+void get_MorB_3(){}
+void rescue_firefighters(){}
+void camera_scan2(){}
+void save_medicenter(){}
+void leave(){}
+void connect_electricity(){}
 
 //Main Procedure
 int main()
@@ -102,8 +121,9 @@ int main()
     create_connect();
     enable_servos();
     shut_down_in(2000);
-    set_servo_position(,);
-    set_servo_position(,);
+    set_servo_position(1,0);
+    set_servo_position(0,0);
+    set_servo_position(2,0);
     get_water();
     camera_scan1();
     //finds burning building to determine which one to bring the water to
