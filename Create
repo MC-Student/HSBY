@@ -88,20 +88,17 @@ void camera_scan1(){}
 void extinguish_fire(){}
 
 void get_MorB_1(){
-set_servo_postion(1,2047);
-set_servo_position(0,2047);
 set_servo_position(2,200); //open claw all the way
+msleep(100);
 set_servo_position(2,104); //close claw to hold it
-back_up(800);
 turn_right();
-turn_right();
+go_forward(300);
 set_servo_position(2,200); //open claw
 set_servo_position(2,0); //close claw all the way to original position
 //close entire arm
 set_servo_position(0,0);
 set_servo_position(1,0);
-back_up(800);
-turn_left();
+back_up(300);
 turn_left();
 //now it's at where it started hopefully
 }
