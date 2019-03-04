@@ -84,6 +84,97 @@ void find_white()
     printf("found white\n");
     ao();
 }
+
+void get_people(){
+go_forward(300);
+turn_right();
+go_forward(100);
+turn_left();
+go_forward(300);
+set_servo_position();
+go_forward(50);
+set_servo_position();
+back_up(350);
+turn_left();
+go_forward(100);
+turn_left(300);
+go_forward(500);
+set_servo_position();
+msleep(50);
+back_up(300);
+turn_left();
+turn_left();
+go_forward(300);
+set_servo_position();
+go_forward(50);
+set_servo_position();back_up(350);
+turn_left();
+go_forward(100);
+turn_left(300);
+go_forward(500);
+set_servo_position();
+msleep(50);
+back_up(300);
+turn_left();
+turn_left();
+go_forward(300);
+set_servo_position();
+go_forward(50);
+set_servo_position();
+back_up(350);
+turn_left();
+go_forward(100);
+turn_left(300);
+go_forward(500);
+set_servo_position();
+msleep(50);
+back_up(300);
+turn_left();
+turn_left();
+}
+
+void blue_poms(){
+turn_right();
+go_forward(600);
+turn_left();
+go_forward(800);
+back_up(200);
+set_servo_position();
+msleep(50);
+back_up(200);
+turn_left();
+go_forward(300);
+set_servo_position(); //pom claw open
+go_forward(1500);
+set_servo_position();
+turn_left();
+turn_left();
+go_forward(2000);
+back_up(100);
+turn_right();
+go_forward(200);
+set_servo_position; //drop off cylinder
+back_up(100);
+turn_right();
+turn_right();
+back_up(200);
+turn_right();
+set_servo_position(); //open claw and drop poms in cylinder
+msleep(50);
+back_up(200);
+turn_right();
+go_forward(1500);
+}
+
+void get_middle_poms(){}
+
+void get_firefighters(){
+turn_right();
+turn_right();
+back_up(300);
+motor(); //???????
+}
+
 int main()
 {
 enable_servos();
@@ -91,8 +182,7 @@ printf("Hello World\n");
 wait_for_light(3);
 shut_down_in(119); 
 get_people();
-get_water_cylinder();
-get_blue_poms();
+blue_poms();
 get_middle_poms();
 get_firefighters(); 
 return 0; 
