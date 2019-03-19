@@ -40,7 +40,21 @@ void turn_left()
     printf("turnedright\n");
   ao();
 }
-    
+void turn_small_left()
+{
+    motor(LEFTMOTOR, speed);
+  	motor(RIGHTMOTOR, -speed);
+    msleep(100);
+    ao();
+}
+void turn_small_right()
+{
+    motor(LEFTMOTOR, -speed);
+  	motor(RIGHTMOTOR, speed);
+    msleep(100);
+    ao();
+}
+
 void turn_right()
 {
     cmpc(RIGHTMOTOR);
@@ -92,28 +106,39 @@ void find_white()
 void get_people(){
 go_forward(3000);
 turn_right();
-go_forward(4200);
+go_forward(4100);
 turn_left();
-go_forward(8000);
+go_forward(5000);
+msleep(100);
 set_servo_position(3,1370);
 set_servo_position(0,1750);
-go_forward(200);
-set_servo_position(0,509);
-set_servo_position(3,220);
-back_up(350);
+msleep(100);
+go_forward(3500);
+//turn_small_right();
+//turn_small_right();
+set_servo_position(0,3);
+go_forward(700);
+set_servo_position(3,30);
+set_servo_position(0,1036);
+back_up(825);
 /*turn_left();
 go_forward(100);
-turn_left(300);
+turn_left();
 go_forward(500);
-set_servo_position();
-msleep(50);
-back_up(300);
+set_servo_position(3,1370);
+set_servo_position(0,1750);
+msleep(100);
+go_forward(3500);
+set_servo_position(0,509);
+set_servo_position(3,150);
+back_up(750);
 turn_left();
 turn_left();
-go_forward(300);
-set_servo_position();
-go_forward(50);
-set_servo_position();back_up(350);
+go_forward(3000);
+set_servo_position(3,1370);
+set_servo_position(0,1750);
+msleep(200);
+back_up(350);
 turn_left();
 go_forward(100);
 turn_left(300);
@@ -178,7 +203,7 @@ void get_firefighters(){
 turn_right();
 turn_right();
 back_up(300);
-motor(); //???????
+
 }
 */
 int main()
@@ -187,6 +212,7 @@ enable_servos();
 printf("Hello World\n");
 /*wait_for_light(3);
 shut_down_in(119);*/ 
+set_servo_position(1,1850);
 get_people();
 /*blue_poms();
 get_middle_poms();
