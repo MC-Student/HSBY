@@ -1,0 +1,13 @@
+int main()
+{
+enable_servos();
+printf("Hello World\n");
+/*wait_for_light(3);
+shut_down_in(119);*/ 
+set_servo_position(1,1850);
+get_people();
+/*blue_poms();
+get_middle_poms();
+get_firefighters();*/ 
+return 0; 
+}
